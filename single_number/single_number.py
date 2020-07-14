@@ -4,8 +4,15 @@ Returns: an integer
 '''
 def single_number(arr):
     # Your code here
+    checked_arr = []
 
-    pass
+    for num in arr:
+        if num in checked_arr:
+            checked_arr.remove(num)
+        else:
+            checked_arr.append(num)
+
+    return checked_arr[0]
 
 
 if __name__ == '__main__':
