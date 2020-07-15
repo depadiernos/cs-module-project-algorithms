@@ -4,8 +4,24 @@ Returns: a List of integers
 '''
 def product_of_all_other_numbers(arr):
     # Your code here
+    new_arr = []
+    exclusion_arr = []
 
-    pass
+    for num in arr:
+        exclusion_arr.append(num)
+
+    for index, num in enumerate(exclusion_arr):
+        product_num = None
+        for not_index, not_num in enumerate(exclusion_arr):
+            if index is not not_index:
+                if not product_num:
+                    product_num = not_num
+                else:
+                    product_num = product_num * not_num
+        new_arr.append(product_num)
+    
+    return new_arr
+    
 
 
 if __name__ == '__main__':
