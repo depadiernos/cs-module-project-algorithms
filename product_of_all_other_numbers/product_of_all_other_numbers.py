@@ -5,19 +5,12 @@ Returns: a List of integers
 def product_of_all_other_numbers(arr):
     # Your code here
     new_arr = []
-    exclusion_arr = []
 
-    for num in arr:
-        exclusion_arr.append(num)
-
-    for index, num in enumerate(exclusion_arr):
-        product_num = None
-        for not_index, not_num in enumerate(exclusion_arr):
-            if index is not not_index:
-                if not product_num:
-                    product_num = not_num
-                else:
-                    product_num = product_num * not_num
+    for index, num in enumerate(arr):
+        product_num = 1
+        exclusion_arr = arr[:index] + arr[index+1:]
+        for num in exclusion_arr:
+            product_num = product_num * num
         new_arr.append(product_num)
     
     return new_arr
