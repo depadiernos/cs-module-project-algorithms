@@ -4,6 +4,7 @@ Returns: an integer
 '''
 def eating_cookies(n, cache = {}):
     # Your code here
+    # the list that the tests passes are slow. I override that and use a dict instead.
     cache = cache if not isinstance(cache, list) else {}
 
     if n < 0:
