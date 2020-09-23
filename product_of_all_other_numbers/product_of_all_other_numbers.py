@@ -4,8 +4,17 @@ Returns: a List of integers
 '''
 def product_of_all_other_numbers(arr):
     # Your code here
+    new_arr = []
 
-    pass
+    for index, num in enumerate(arr):
+        product_num = 1
+        exclusion_arr = arr[:index] + arr[index+1:]
+        for num in exclusion_arr:
+            product_num = product_num * num
+        new_arr.append(product_num)
+    
+    return new_arr
+    
 
 
 if __name__ == '__main__':
